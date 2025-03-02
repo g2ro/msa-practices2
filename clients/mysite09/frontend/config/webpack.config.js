@@ -46,7 +46,7 @@ module.exports = function(env) {
             compress: true,
             hot: false,
             proxy: [{
-                context: ['/api', '/assets/gallery'],
+                context: ['/api'],
                 target: 'http://localhost:8080',
             }],            
             static: {
