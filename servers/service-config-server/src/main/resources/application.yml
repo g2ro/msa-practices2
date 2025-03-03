@@ -10,11 +10,11 @@ spring:
 server:
    port: 7777
 
-#encrypt:
-#   key-store:
-#      alias: selfsigned
-#      location: classpath:keystore.jks
-#      password: password
+encrypt:
+   key-store:
+      alias: selfsigned
+      location: classpath:keystore.jks
+      password: password
     
     
 ---
@@ -28,7 +28,7 @@ spring:
          server:
             encrypt.enabled: true
             git:
-               uri: https://github.com/bitacademy-poscodx09/msa-practices-config-repo
+               uri: https://github.com/g2ro/msa-practices-config-repo
                searchPaths: service-emaillist,
                             service-storage,
                             service-gallery,
@@ -59,7 +59,7 @@ spring:
    cloud:
      config:
        server:
-          encrypt.enabled: false
+          encrypt.enabled: true
           native:
               searchLocations: file:///Users/kilho/poscodx09/sts-workspace/msa-practices-config-repo/service-emaillist,
                                file:///Users/kilho/poscodx09/sts-workspace/msa-practices-config-repo/service-storage,

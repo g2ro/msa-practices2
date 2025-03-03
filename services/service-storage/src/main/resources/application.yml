@@ -10,91 +10,20 @@ spring:
 ---
 # profile: common(default)
 spring:
-   servlet:
-      multipart:
+   cloud:
+      config:
          enabled: true
-         file-size-threshold: 5242880
-         max-file-size: 10485760
-         max-request-size: 104857600
-      
-server:
-   port: 0
-   error:
-      whitelabel:
-         enabled: false
-      path: /error   
-   servlet:
-      context-path: /
-
-
 ---
 # profile: development
 spring:
    config:
       activate:
          on-profile: development
-
-   devtools:
-      restart:
-         enabled: true
-      livereload:
-         enabled: true
-
-logging:
-   pattern:
-      console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
-   level:
-      root: INFO  
-               
-eureka:
-   instance:
-      preferIpAddress: true
-   client:
-      fetchRegistry: true
-      registerWithEureka: true
-      serviceUrl:
-         defaultZone: http://localhost:8761/eureka
-
-storage:
-   location: /Users/kilho/service-storage/assets
-   httpd:
-      host: localhost
-      port: 9999           
-
-                            
+      import: optional:configserver:http://localhost:7777
 ---
 # configuration: production
 spring:
    config:
       activate:
          on-profile: production
-
-logging:
-   pattern:
-      file: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n"
-   logback:
-      rollingpolicy:
-         file-name-pattern: "logs/${spring.application.name}.%d{yyyy-MM-dd}.%i.log.zip"
-         max-file-size: 10MB
-         max-history: 10
-   file:
-      name: logs/${spring.application.name}.log
-   level:
-      root: WARN
-      storage:
-         exception: ERROR         
-
-eureka:
-   instance:
-      preferIpAddress: true
-   client:
-      fetchRegistry: true
-      registerWithEureka: true
-      serviceUrl:
-         defaultZone: http://192.168.64.3:8761/eureka
-
-storage:
-   location: /service-storage/assets
-   httpd:
-      host: 192.168.64.3
-      port: 9999
+      import: optional:configserver:http://192.168.64.3:7777
