@@ -1,7 +1,6 @@
 package com.poscodx.emaillist.exception;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -14,6 +13,8 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.poscodx.emaillist.dto.JsonResult;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
