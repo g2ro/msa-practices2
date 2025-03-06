@@ -67,6 +67,7 @@ app.post("/refresh-token", async (req, res) => {
 //
 //  request: /profile
 //
+// app.get{, () => {}, () => {}} 이렇게 하면 계속 다음 함수를 호출할 수 있다.
 app.get("/profile", async (req, res, next) => {
     try {
         const authHeader = req.headers["authorization"];

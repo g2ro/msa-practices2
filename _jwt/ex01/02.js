@@ -14,3 +14,5 @@ try {
 } catch (error) {
     console.error(error);
 }
+
+// invalid, token 값을 모두 대문자로 했기 때문에 token 내용이 달라진다.
