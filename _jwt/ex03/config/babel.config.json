@@ -14,9 +14,9 @@
       }
     ],
     "@babel/preset-react"
-  ],
-  "plugins": [
-    "@babel/plugin-transform-runtime",
-    "@babel/plugin-syntax-throw-expressions"
   ]
+  // "plugins": [
+  //   "@babel/plugin-transform-runtime",
+  //   "@babel/plugin-syntax-throw-expressions"
+  // ] // 에전에는 통신을 위해 필요했었음
 }
